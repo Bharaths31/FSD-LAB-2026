@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container { max-width: 300px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input { width: 100%; padding: 8px; margin: 5px 0 15px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form onsubmit="registerUser(event)">
+            <label>Username</label>
+            <input type="text" id="username" required>
+            
+            <label>Email</label>
+            <input type="email" id="email" required>
+            
+            <label>Password</label>
+            <input type="password" id="password" required>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function registerUser(event) {
+            event.preventDefault();
+            const user = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            alert("Registration Successful!\nUser: " + user + "\nEmail: " + email);
+        }
+    </script>
+
+</body>
+</html>

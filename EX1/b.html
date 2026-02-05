@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; transition: 0.5s; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body id="body">
+
+    <h1>Interactive Page</h1>
+    <p>Click the button to change the theme.</p>
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        function changeColor() {
+            const colors = ['#f8d7da', '#d4edda', '#d1ecf1', '#fff3cd', '#ffffff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('body').style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+</html>

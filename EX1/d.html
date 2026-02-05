@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        form { max-width: 400px; background: #f4f4f4; padding: 20px; border-radius: 8px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        .checkbox-group label { font-weight: normal; display: inline; margin-right: 15px; }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="submitInterests(event)">
+        <h2>Interest Survey</h2>
+
+        <label>Full Name:</label>
+        <input type="text" id="fullName" required>
+
+        <label>Primary Area of Interest:</label>
+        <select id="primaryInterest">
+            <option value="Web Dev">Web Development</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Cyber Security">Cyber Security</option>
+        </select>
+
+
+        <br>
+        <button type="submit">Submit Survey</button>
+    </form>
+
+    <script>
+        function submitInterests(event) {
+            event.preventDefault();
+            const name = document.getElementById('fullName').value;
+            const primary = document.getElementById('primaryInterest').value;
+            
+
+            alert(`Thank you ${name}!\nPrimary: ${primary}`);
+        }
+    </script>
+
+</body>
+</html>

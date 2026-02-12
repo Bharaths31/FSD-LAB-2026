@@ -10,9 +10,9 @@ function ThemeToggle() {
 	const isDark = theme === 'dark';
 
 	return (
-		<button className="toggle" onClick={toggleTheme} type="button">
-			{isDark ? 'Switch to Light' : 'Switch to Dark'}
-		</button>
+		<button  className="toggle" onClick={toggleTheme} type="button">
+			{isDark ? 'Light' : 'Dark'}
+      </button>
 	);
 }
 
@@ -22,8 +22,8 @@ function Content() {
 	return (
 		<main className={`app ${theme}`}>
 			<section className="card">
-				<h1>Theme Toggle (Context)</h1>
-				<p>Current mode: {theme}</p>
+				<h1>Click to Change Theme</h1>
+				<p>Theme: {theme}</p>
 				<ThemeToggle />
 			</section>
 		</main>

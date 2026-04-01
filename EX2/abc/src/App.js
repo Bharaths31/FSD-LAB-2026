@@ -66,6 +66,7 @@ function AadharCardSwap() {
     </div>
   );
 }
+
 function RegistrationForm() {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
 
@@ -103,6 +104,7 @@ function RegistrationForm() {
     </form>
   );
 }
+
 function CounterApp() {
   const [count, setCount] = useState(0);
 

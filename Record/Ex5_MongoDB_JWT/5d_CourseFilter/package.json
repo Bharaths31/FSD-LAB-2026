@@ -1,0 +1,13 @@
+{
+  "name": "course-filter",
+  "version": "1.0.0",
+  "description": "Filter trainees by course name",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3"
+  }
+}

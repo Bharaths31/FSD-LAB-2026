@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter App</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+        .counter-container {
+            background: #16213e;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            min-width: 350px;
+        }
+        h1 { margin-bottom: 30px; font-size: 24px; color: #e94560; }
+        .counter-value {
+            font-size: 72px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #fff;
+        }
+        .counter-value.positive { color: #2ecc71; }
+        .counter-value.negative { color: #e74c3c; }
+        .counter-value.zero { color: #fff; }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            min-width: 70px;
+        }
+        .btn-decrement { background: #e74c3c; }
+        .btn-decrement:hover { background: #c0392b; }
+        .btn-increment { background: #2ecc71; }
+        .btn-increment:hover { background: #27ae60; }
+        .btn-reset { background: #95a5a6; }
+        .btn-reset:hover { background: #7f8c8d; }
+        .step-section {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #333;
+        }
+        .step-section label {
+            font-size: 14px;
+            color: #aaa;
+            margin-right: 8px;
+        }
+        .step-section input {
+            width: 60px;
+            padding: 6px;
+            text-align: center;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background: #0f3460;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [count, setCount] = useState(0);
+            const [step, setStep] = useState(1);
+
+            const getColorClass = () => {
+                if (count > 0) return 'positive';
+                if (count < 0) return 'negative';
+                return 'zero';
+            };
+
+            return (
+                <div className="counter-container">
+                    <h1>⚡ Counter App</h1>
+                    <div className={`counter-value ${getColorClass()}`}>{count}</div>
+                    <div className="btn-group">
+                        <button className="btn btn-decrement" onClick={() => setCount(count - step)}>− {step}</button>
+                        <button className="btn btn-reset" onClick={() => setCount(0)}>Reset</button>
+                        <button className="btn btn-increment" onClick={() => setCount(count + step)}>+ {step}</button>
+                    </div>
+                    <div className="step-section">
+                        <label>Step Size:</label>
+                        <input
+                            type="number"
+                            min="1"
+                            value={step}
+                            onChange={(e) => setStep(Math.max(1, parseInt(e.target.value) || 1))}
+                        />
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>

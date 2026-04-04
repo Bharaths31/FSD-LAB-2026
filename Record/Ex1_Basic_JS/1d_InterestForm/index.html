@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Selection Form</h1>
+        <form id="interestForm">
+            <h3>Select your Interests:</h3>
+            <div class="checkbox-list">
+                <label><input type="checkbox" name="interest" value="Sports" /> Sports</label>
+                <label><input type="checkbox" name="interest" value="Music" /> Music</label>
+                <label><input type="checkbox" name="interest" value="Reading" /> Reading</label>
+                <label><input type="checkbox" name="interest" value="Movies" /> Movies</label>
+                <label><input type="checkbox" name="interest" value="Coding" /> Coding</label>
+                <label><input type="checkbox" name="interest" value="Gaming" /> Gaming</label>
+                <label><input type="checkbox" name="interest" value="Traveling" /> Traveling</label>
+                <label><input type="checkbox" name="interest" value="Photography" /> Photography</label>
+            </div>
+
+            <label for="education">Select your Education Level:</label>
+            <select id="education">
+                <option value="">-- Select --</option>
+                <option value="High School">High School</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="PhD">PhD</option>
+            </select>
+
+            <label for="language">Select your Preferred Programming Language:</label>
+            <select id="language">
+                <option value="">-- Select --</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Go">Go</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="resultCard" class="result-card" style="display:none;">
+            <h3>Selected Information</h3>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
